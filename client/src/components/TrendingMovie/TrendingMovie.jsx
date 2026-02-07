@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MovieCard from "../MovieCard/MovieCard";
 
 function TrendingMovie() {
   const [page, setPage] = useState(1);

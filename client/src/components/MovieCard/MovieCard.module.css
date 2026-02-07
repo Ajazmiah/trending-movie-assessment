@@ -34,3 +34,6 @@
     cursor: pointer; 
     font-weight: bold;
   }
+  .favorited {
+    background-color: red;
+  }
