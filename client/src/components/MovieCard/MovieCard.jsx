@@ -1,7 +1,15 @@
 import React from "react";
+import { useMovieContext } from "../../../context/movieContext";
 import styles from "./MovieCard.module.css";
 
 function MovieCard({ movies }) {
+  const { toggleFavoriteMovie, isFavorite } = useMovieContext();
+
+
+  const handleFavorite = (e, movie) => {
+    toggleFavoriteMovie(movie)
+  }
+
   return (
     <div className={styles.movies}>
       {movies.map((movie) => (
@@ -12,6 +20,7 @@ function MovieCard({ movies }) {
             <p>Rating: {movie.vote_average}</p>
             <p>Release: {movie.release_date}</p>
           </div>
+          <button className={`${styles.favoriteBtn} ${isFavorite(movie.id) ? styles.favorited : ''}`} onClick={(e) => handleFavorite(e, movie)}>{isFavorite(movie.id) ? "-" : "+"}</button>
         </div>
       ))}
     </div>
