@@ -10,8 +10,24 @@ export const favoriteMovieProvider = ({ children }) => {
     return favoritedMovies ? JSON.parse(favoritedMovies) : [];
   });
 
+  const toggleFavoriteMovie = (movie) => {
+    const favoriteExists = favorites.find((fav) => fav.id === movie.id);
+
+    if (favoriteExists) {
+      setFavorites((prev) => prev.filter((fav) => fav.id !== movie.id));
+    } else {
+      setFavorites((prev) => [...prev, movie]);
+    }
+  };
+
+  const isFavorite = (id) => {
+    return favorites.some((favMovie = favMovie.id === id));
+  };
+
   return (
-    <favoriteMovieContext.Provider value>
+    <favoriteMovieContext.Provider
+      value={{ favorites, toggleFavoriteMovie, isFavorite }}
+    >
       {children}
     </favoriteMovieContext.Provider>
   );

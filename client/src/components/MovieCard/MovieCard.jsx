@@ -13,7 +13,7 @@ function MovieCard({ movies }) {
             <p>Release: {movie.release_date}</p>
           </div>
           <button className={styles.favoriteBtn}>
-            {2 == 2 ? "+" : "+"}
+            {2 == 2 ? "-" : "+"}
           </button>
         </div>
       ))}
