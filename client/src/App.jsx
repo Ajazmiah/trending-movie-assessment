@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import useFetch from "./hooks/useFetch";
 import MovieCard from "./components/MovieCard/MovieCard";
@@ -76,10 +76,17 @@ function App() {
   };
 
   return (
-    <>
-      <h1>Trending Movies</h1>
-      <MovieCard movies={data.results} />
-    </>
+    <div>
+      <header>
+        <nav>
+          <Link to="/favorites">View Favorites</Link>
+        </nav>
+      </header>
+      <main>
+        <h1>Trending Movies</h1>
+        <MovieCard movies={data.results} />
+      </main>
+    </div>
   );
 }
 
