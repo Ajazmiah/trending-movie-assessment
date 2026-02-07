@@ -12,6 +12,9 @@ function MovieCard({ movies }) {
             <p>Rating: {movie.vote_average}</p>
             <p>Release: {movie.release_date}</p>
           </div>
+          <button className={styles.favoriteBtn}>
+            {2 == 2 ? "+" : "+"}
+          </button>
         </div>
       ))}
     </div>
