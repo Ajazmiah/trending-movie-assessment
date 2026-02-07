@@ -1,5 +1,5 @@
 export const getMovieDetails = async (req, res) => {
-  const movieId = req.query.movieId || 1368166;
+  const movieId = parseInt(req.query.movieId) || 1368166;
   const TMDB_API_KEY = process.env.TMDB_API_KEY;
 
   const URL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${TMDB_API_KEY}`;
