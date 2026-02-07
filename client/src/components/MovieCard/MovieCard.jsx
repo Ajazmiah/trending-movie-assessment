@@ -7,9 +7,11 @@ function MovieCard({ movies }) {
       {movies.map((movie) => (
         <div key={movie.id} className={styles.movie}>
           <img src={movie.poster_img_url} alt={movie.title} width={200} />
-          <h3>{movie.title}</h3>
-          <p>Rating: {movie.vote_average}</p>
-          <p>Release: {movie.release_date}</p>
+          <div className={styles.info}>
+            <h3>{movie.title}</h3>
+            <p>Rating: {movie.vote_average}</p>
+            <p>Release: {movie.release_date}</p>
+          </div>
         </div>
       ))}
     </div>
