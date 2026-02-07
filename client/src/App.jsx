@@ -1,10 +1,9 @@
 import "./App.css";
-import { Routes, Route, Link, Outlet } from "react-router-dom";
-import { useState } from "react";
-import useFetch from "./hooks/useFetch";
-import MovieCard from "./components/MovieCard/MovieCard";
+import { Routes, Route, Link, Outlet, useLocation } from "react-router-dom";
 
 function App() {
+  const location = useLocation();
+
   return (
     <div>
       <header>
@@ -16,13 +15,14 @@ function App() {
       <main>
         <Outlet />
 
-        <div className="homeCTA">
-          <di>
-            <p> Click below to view trending movies</p>
-
-            <Link to="/trending">Trending Movies</Link>
-          </di>
-        </div>
+        {location.pathname === "/" && (
+          <div className="homeCTA">
+            <div>
+              <p>Click below to view trending movies</p>
+              <Link to="/trending">Trending Movies</Link>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
