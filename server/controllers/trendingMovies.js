@@ -15,7 +15,11 @@ export const getTrendingMovies = async (req, res) => {
   
     }));
 
-    res.json(moviesWithPosterImage);
+    res.json({
+      ...data,
+      results: moviesWithPosterImage
+    }
+    );
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
