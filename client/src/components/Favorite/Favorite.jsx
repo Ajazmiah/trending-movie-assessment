@@ -6,10 +6,15 @@ function Favorite() {
   const { favorites, toggleFavoriteMovie, isFavorite } = useMovieContext();
   return (
     <>
-    <h1>Favorite Movies</h1>
-    <MovieCard movies={favorites} />;
+      <h1>Favorite Movies</h1>
+
+      {favorites.length > 0 ? (
+        <MovieCard movies={favorites} />
+      ) : (
+        <p>No Favorite Movies</p>
+      )}
     </>
-  )
+  );
 }
 
 export default Favorite;
