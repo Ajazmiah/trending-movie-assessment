@@ -50,6 +50,12 @@ npm run test
 - Movie details are stored as an array of objects.  
 - When fetching a movie, the array is checked first to see if the details already exist, allowing multiple movies to be cached.
 
+---
+## client runs on
+- http://localhost:5173
+## server runs on
+- http://localhost:5000
+
  
 
 
