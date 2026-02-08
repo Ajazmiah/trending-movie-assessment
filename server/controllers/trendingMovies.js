@@ -13,7 +13,7 @@ export const getTrendingMovies = async (req, res) => {
   let cachedMovies;
 
   try {
-    const savedMovies = fs.readFileSync(DATA_PATH, "utf-9");
+    const savedMovies = fs.readFileSync(DATA_PATH, "utf-8");
     cachedMovies = JSON.parse(savedMovies);
 
     if (cachedMovies?.page === page && cachedMovies.results?.length > 0) {
@@ -39,7 +39,7 @@ export const getTrendingMovies = async (req, res) => {
 
     // if cache not available - create data folder and write finalData to it
     try {
-      fs.mkdirSync(DATA_DIR)
+      fs.mkdirSync(DATA_DIR, { recursive: true });
       fs.writeFileSync(DATA_PATH, JSON.stringify(finalData), "utf-8");
       console.log("Trending movies cached to JSON file");
     } catch (writeErr) {
