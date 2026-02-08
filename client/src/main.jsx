@@ -6,6 +6,7 @@ import App from "./App";
 import Favorite from "./components/Favorite/Favorite";
 import FavoriteMovieProvider from "../context/movieContext";
 import TrendingMovie from "./components/TrendingMovie/TrendingMovie";
+import MovieDetails from "./components/MovieDetails/MovieDetails";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -13,7 +14,7 @@ createRoot(document.getElementById("root")).render(
       <FavoriteMovieProvider>
         <Routes>
           <Route path="/" element={<App />}>
-            <Route path="/movie/:id" element={<h1>heloo</h1>} />
+            <Route path="/movie/:movieId" element={<MovieDetails/>} />
             <Route path="/favorites" element={<Favorite />} />
             <Route path="/trending" element={<TrendingMovie/>} />
           </Route>
