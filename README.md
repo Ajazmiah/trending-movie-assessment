@@ -5,6 +5,7 @@ This is a React + Node.js movie app that fetches trending movies and allows user
 
 - Client: React (Vite)  
 - Server: Node.js + Express  
+- React Router 
 - API: TMDb  
 
 ---
