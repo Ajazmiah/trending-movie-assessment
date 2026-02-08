@@ -24,7 +24,7 @@ function MovieCard({ movies }) {
             <p>Rating: {movie.vote_average}</p>
             <p>Release: {movie.release_date}</p>
           </div>
-          <button className={`${styles.favoriteBtn} ${isFavorite(movie.id) ? styles.favorited : ''}`} onClick={(e) => handleFavorite(e, movie)}>{isFavorite(movie.id) ? "-" : "+"}</button>
+          <button data-testId='favorite-btn' className={`${styles.favoriteBtn} ${isFavorite(movie.id) ? styles.favorited : ''}`} onClick={(e) => handleFavorite(e, movie)}>{isFavorite(movie.id) ? "-" : "+"}</button>
         </div>
         </Link>
       ))}
