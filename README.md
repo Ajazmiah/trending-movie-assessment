@@ -8,7 +8,7 @@ This is a React + Node.js movie app that fetches trending movies and allows user
 - React Router 
 - API: TMDb  
 # This project uses the TMDb v3 API key.
-- look inside server and env.example file for more details
+- look inside server directory and in the env.example file for more details
 
 ---
 
@@ -35,7 +35,7 @@ node -v        # verify correct Node version - should be 20.19.6
 npm run install:all
 
 # create .env file inside server dir and add your API key 
-- cd server 
+- look inside server directory and in the env.example file for more details
 
 # Run the app (client + server concurrently) - from root
 npm run dev
