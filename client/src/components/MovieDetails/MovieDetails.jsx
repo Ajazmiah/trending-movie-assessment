@@ -27,7 +27,7 @@ function MovieDetails() {
         <h1>{movie.title}</h1>
 
         <p className="tagline">"{movie?.tagline}"</p>
-        <p className="overview">{movie?.overview}</p>
+        <p className="overview">Overview: {movie?.overview}</p>
         <p>
           <strong>Genres:</strong> {movie.genres.map((g) => g.name).join(", ")}
         </p>

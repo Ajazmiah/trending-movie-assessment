@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MovieCard from "../MovieCard/MovieCard";
+import useFetch from "../../hooks/useFetch";
 
 function TrendingMovie() {
   const [page, setPage] = useState(1);
@@ -7,7 +8,9 @@ function TrendingMovie() {
 
   const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
-  const data = {
+  // const {isLoading, data, error} = useFetch(url)
+
+  const dataMock = {
     page: 1,
     total_pages: 500,
     total_results: 10000,
@@ -72,7 +75,7 @@ function TrendingMovie() {
   return (
     <div>
       <h1>Trending Movies</h1>
-      <MovieCard movies={data.results} />
+      <MovieCard movies={dataMock.results} />
     </div>
   );
 }
