@@ -9,6 +9,7 @@ function App() {
       <header>
         <nav>
           <Link to="/">Home</Link>
+          <Link to="/trending">Trending Movies</Link>
           <Link to="/favorites">View Favorites</Link>
         </nav>
       </header>
