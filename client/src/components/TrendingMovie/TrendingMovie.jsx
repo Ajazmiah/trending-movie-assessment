@@ -10,8 +10,8 @@ function TrendingMovie() {
 
 
   if(!data) return
-  if(isLoading) return <p>loading...</p>
   if(error) return <p>Somethign went wrong : {error}</p>
+  if(isLoading) return <p>loading...</p>
 
 
 

@@ -5,7 +5,7 @@ import MovieCard from "../MovieCard/MovieCard";
 function Favorite() {
   const { favorites } = useMovieContext();
   return (
-    <>
+    <div style={{maxWidth: '720px', margin: '0 auto'}}>
       <h1>Favorite Movies</h1>
 
       {favorites.length > 0 ? (
@@ -13,7 +13,7 @@ function Favorite() {
       ) : (
         <p>No Favorite Movies</p>
       )}
-    </>
+    </div>
   );
 }
 
