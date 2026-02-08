@@ -8,6 +8,8 @@ function MovieCard({ movies }) {
 
 
   const handleFavorite = (e, movie) => {
+    e.preventDefault();    
+    e.stopPropagation(); 
     toggleFavoriteMovie(movie)
   }
 
