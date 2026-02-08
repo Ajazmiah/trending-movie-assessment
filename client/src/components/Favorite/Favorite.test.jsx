@@ -10,19 +10,42 @@ import { MemoryRouter } from "react-router-dom";
 const FavoriteMovieContext = createContext();
 
 vi.mock("../../context/movieContext", () => ({
-  useMovieContext: () => React.useContext(FavoriteMovieContext)
+  useMovieContext: () => React.useContext(FavoriteMovieContext),
 }));
 
 describe("Favorite Component", () => {
+  const mockedMovie = [
+    {
+      id: 1,
+      title: "movie title",
+      poster_img_url: "https://www.testimg.com",
+    },
+  ];
+
+  const isFavorite = () => {};
   test("renders 'No Favorite Movies' when favorites is empty", () => {
     render(
       <FavoriteMovieContext.Provider value={{ favorites: [] }}>
         <MemoryRouter>
-         <Favorite />
-       </MemoryRouter>
+          <Favorite />
+        </MemoryRouter>
       </FavoriteMovieContext.Provider>
     );
 
     expect(screen.getByText("No Favorite Movies")).toBeInTheDocument();
+  });
+
+  test("renders favorite movies when favorites has atleast one favorite", () => {
+    render(
+      <FavoriteMovieContext.Provider
+        value={{ favorites: mockedMovie, isFavorite }}
+      >
+        <MemoryRouter>
+          <Favorite />
+        </MemoryRouter>
+      </FavoriteMovieContext.Provider>
+    );
+
+    expect(screen.getByText("movie title")).toBeInTheDocument();
   });
 });
