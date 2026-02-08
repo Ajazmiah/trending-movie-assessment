@@ -1,5 +1,3 @@
-
-
 export const getTrendingMovies = async (req, res) => {
   const TMDB_API_KEY = process.env.TMDB_API_KEY;
   const page = parseInt(req.query.page);
@@ -12,7 +10,7 @@ export const getTrendingMovies = async (req, res) => {
 
     const moviesWithPosterImage = data.results.map((movie) => ({
       ...movie,
-      poster_img_url: `${IMAGE_BASE_URL}/${movie?.poster_path}`,
+      poster_img_url: `${IMAGE_BASE_URL}${movie?.poster_path}`,
     }));
 
     res.json({
