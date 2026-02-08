@@ -40,7 +40,6 @@ describe("MovieCard", () => {
   });
 
   it("displays - when the movie is favorited", async () => {
-    const toggleFavoriteMovie = () => {};
     render(
       <FavoriteMovieProvider>
         <MemoryRouter>
