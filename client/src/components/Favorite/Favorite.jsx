@@ -1,5 +1,5 @@
 import React from "react";
-import { useMovieContext } from "../../../context/movieContext";
+import { useMovieContext } from "../../context/movieContext";
 import MovieCard from "../MovieCard/MovieCard";
 
 function Favorite() {

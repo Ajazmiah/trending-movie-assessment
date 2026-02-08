@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import Favorite from "./components/Favorite/Favorite";
-import FavoriteMovieProvider from "../context/movieContext";
+import FavoriteMovieProvider from "./context/movieContext";
 import TrendingMovie from "./components/TrendingMovie/TrendingMovie";
 import MovieDetails from "./components/MovieDetails/MovieDetails";
 
