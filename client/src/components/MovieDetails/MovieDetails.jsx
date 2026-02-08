@@ -12,8 +12,9 @@ function MovieDetails() {
 
   if (!movie) return;
 
-  if (isLoading) return <p>Loading...</p>;
   if (error) return <p>error</p>;
+  if (isLoading) return <p>Loading...</p>;
+
 
   return (
     <div className={styles.movieDetails}>
